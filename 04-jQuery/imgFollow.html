@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body{
+            text-align: center;
+        }
+        #small{
+            margin-top: 150px;
+        }
+        #showBig{
+            position: absolute;
+            display: none;
+        }
+    </style>
+    <script type="text/javascript" src="jquery/jquery-3.5.1.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#small").bind("mouseout mouseover mousemove",function (event) {
+                if (event.type=="mouseover"){
+                    $("#showBig").show();
+                }else if (event.type=="mouseout"){
+                    $("#showBig").hide();
+                }else if(event.type=="mousemove"){
+                    $("#showBig").offset({
+                       left:event.pageX + 15,
+                       top:event.pageY +15
+                    });
+                }
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <img id="small" src="small.jpg">
+    <div id="showBig">
+        <img src="big.jpg">
+    </div>
+</body>
+</html>

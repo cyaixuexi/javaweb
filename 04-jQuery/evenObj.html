@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #areaDiv{
+            border: 1px solid black;
+            width: 300px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+        #showMsg{
+            border: 1px solid black;
+            width: 300px;
+            height: 20px;
+        }
+    </style>
+    <script type="text/javascript" src="jquery/jquery-3.5.1.js"></script>
+    <script type="text/javascript">
+        // 1.原生JavaScript获取事件对象
+        /*window.onload =function () {
+            document.getElementById("areaDiv").onclick =function (event) {
+                console.log(event);
+            }
+        }*/
+        // *2.jQuery代码获得事件对象
+        $(function () {
+            /*$("#areaDiv").click(function (event) {
+                console.log(event);
+            });*/
+
+            $("#areaDiv").bind("mouseout mouseover",function (event) {
+                if (event.type=="mouseover"){
+                    console.log('鼠标移入');
+                }else if (event.type=="mouseout"){
+                    console.log('鼠标移出');
+                }
+
+            });
+
+        });
+        // * 3.使用bind同时对多个事件绑定同一个函数。怎么获取当前操作是什么事件
+
+    </script>
+</head>
+<body>
+    <div id="areaDiv"></div>
+    <div id="showMsg"></div>
+</body>
+</html>

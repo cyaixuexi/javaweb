@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="jquery/jquery-3.5.1.js"></script>
+    <script type="text/javascript">
+        /*
+        *attr() 可以设置和获取属性的值，不推荐操作checked readOnly，selected，disabled
+        *       attr方法还可以操作非标准的属性  如自定义属性
+        *prop() 可以设置和获取属性的值  只推荐操作checked readOnly，selected，disabled
+        * */
+        $(function () {
+          /* alert($(":checkbox:first").attr("name"));//获取
+            $(":checkbox:first").attr("name","ABC");//设置
+
+            $(":checkbox").prop("checked",true);*/
+
+          $(":checkbox:first").attr("acc","ABC");
+          alert( $(":checkbox:first").attr("acc"));
+        });
+    </script>
+</head>
+<body>
+    多选：
+    <input name="checkbox" type="checkbox" value="checkbox1">checkbox1
+    <input name="checkbox" type="checkbox" value="checkbox2">checkbox2
+    <input name="checkbox" type="checkbox" value="checkbox3">checkbox3<br>
+
+</body>
+</html>

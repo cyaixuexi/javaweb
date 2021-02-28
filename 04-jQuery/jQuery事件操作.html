@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="jquery/jquery-3.5.1.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+         /*   $("h5").click(function () {//传function是绑定事件
+                alert("h5单击事件==click方法绑定");
+            });
+
+            $("button").click(function () {//不传function是触发事件
+                $("h5").click();
+            })
+
+            $("h5").mouseover(function () {//鼠标移出
+                console.log("你进来了！")
+            });
+            $("h5").mouseout(function () {//鼠标移入
+                console.log("你出去了！")
+            });*/
+
+            //使用bind绑定事件(可以给元素一次性绑定一个或多个事件)
+            /*$("h5").bind("click mouseover",function () {
+                console.log("这是bind绑定的事件");
+            });*/
+
+            // 跟bind一样，但是绑定事件只会响应一次
+           /* $("h5").one("click mouseover",function () {
+                console.log("这是bind绑定的事件");
+            });*/
+
+           //跟bind方法相反，解除绑定
+           //  $("h5").unbind("click");
+
+            //live（） 绑定选择器匹配的所有元素的事件。哪怕这个元素是动态创建出来的也有效
+           $("#panel").on("click","h5",function () {//现在用on代替live动态绑定
+               alert("h5单击事件==live方法绑定");
+           });
+
+            $('<h5 class="head">什么是jQuery？</h5>').appendTo($("#panel"));
+        });
+
+    </script>
+</head>
+<body>
+    <div id="panel">
+        <h5 class="head">什么是jQuery？</h5>
+        <div class="content">
+            jquery是继Prototype之后有一个优秀的JavaScript库。
+        </div>
+        <button>按钮</button>
+    </div>
+</body>
+</html>

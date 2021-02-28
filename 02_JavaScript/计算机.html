@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+            function sum() {
+                var number1 = document.getElementById("num1").value;
+                var number2 = document.getElementById("num2").value;
+                var result = parseInt(number1)*parseInt(number2);
+
+                 document.getElementById("num3").value = result;
+            }
+            /*function sum(){     //加法
+            var value1 = document.getElementById("num1").value;
+            var value2= document.getElementById("num2").value;
+            var result = parseInt(value1)+parseInt(value2);//转换为数字，再进行加法
+            document.getElementById("result1").value=result;     //  把result作为result1这个方框ID的输出
+        }*/
+    </script>
+</head>
+<body>
+    <input type="text" value="" id="num1">*
+    <input type="text" value="" id="num2">=
+    <input type="text" value="" id="num3">
+    <button onclick="sum()">计算</button>
+</body>
+</html>

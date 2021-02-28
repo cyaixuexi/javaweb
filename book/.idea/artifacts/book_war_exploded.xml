@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ear" name="book:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/book_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="lib">
+        <element id="archive" name="book.jar">
+          <element id="module-output" name="book" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

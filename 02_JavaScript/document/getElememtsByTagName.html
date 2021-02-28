@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+        function checkAll() {
+            //document.getElementsByTagName("input") 按照指定标签名来进行查询并返回集合
+            //这个集合的操作跟数据一样 集合都是dom对象
+            //集合中元素顺序是他们在HTML页面中从上到下的顺序
+            var inputs = document.getElementsByTagName("input");
+
+            for (var i=0;i<inputs.length;i++){
+                inputs[i].checked = true;
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+    兴趣爱好：
+    <input type="checkbox"   value="唱" checked="checked">唱
+    <input type="checkbox"   value="跳" >跳
+    <input type="checkbox"   value="rap">rap
+    <br>
+    <button onclick="checkAll()">全选</button>
+
+</body>
+</html>

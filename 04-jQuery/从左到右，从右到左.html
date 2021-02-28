@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        select{
+            width: 100px;
+            height: 140px;
+        }
+        div{
+            width: 130px;
+            float: left;
+            text-align: center;
+        }
+    </style>
+    <script type="text/javascript" src="jquery/jquery-3.5.1.js"></script>
+    <script type="text/javascript">
+        //页面加载完成
+        $(function () {
+            //第一个按钮
+            $("button:eq(0)").click(function () {
+                //左边选中的option.appendTo(右边的Select)
+                $("#sel01 option:selected").appendTo($("select:eq(1)"));
+            })
+            //第二个按钮
+            $("button:eq(1)").click(function () {
+                //左边选中的option.appendTo(右边的Select)
+                $("#sel01 option").appendTo($("select:eq(1)"));
+            })
+            //第三个按钮
+            $("button:eq(2)").click(function () {
+                $("#sel02 option:selected").appendTo($("select:eq(0)"));
+            })
+            //第四个按钮
+            $("button:eq(3)").click(function () {
+                $("#sel02 option").appendTo($("select:eq(0)"));
+            })
+        });
+
+
+    </script>
+</head>
+<body>
+    <div id="left">
+        <select multiple="multiple" id="sel01">
+            <option value="option1">选项1</option>
+            <option value="option2">选项2</option>
+            <option value="option3">选项3</option>
+            <option value="option4">选项4</option>
+            <option value="option5">选项5</option>
+            <option value="option6">选项6</option>
+            <option value="option7">选项7</option>
+        </select>
+
+        <button>选中添加到右边</button>
+        <button>全部添加到右边</button>
+    </div>
+    <div id="right">
+        <select multiple="multiple" id="sel02"></select>
+        <button>选中删除到右边</button>
+        <button>全部删除到右边</button>
+    </div>
+</body>
+</html>

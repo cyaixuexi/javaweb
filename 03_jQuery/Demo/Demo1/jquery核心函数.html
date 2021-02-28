@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../jquery/jquery-3.5.1.js"></script>
+    <script type="text/javascript">
+        //$()
+        /*
+        * 1.传入参数为函数时                表示页面加载完成之后
+        * 2.传入参数为HTML字符串时           会对我们创建这个html标签对象
+        * 3.传入参数为选择器字符串时            $("#id属性值")； id选择器查询标签对象
+        *                                      $("标签名")     标签名选择器查询对象
+        * 4.传入参数为dom对象时                 会把dom对象转化为jQuery对象
+        * */
+        $(function () {
+            alert("页面加载完成之后自动调用");
+
+            $("<div>" +
+                "        <span>div-span1</span>" +
+                "        <span>div-span2</span>" +
+                "    </div>").appendTo("body");
+
+            alert($("button").length);
+
+            var btnObj = document.getElementById("001");//btnObj为dom类型对象
+            alert($(btnObj));
+
+        });
+
+
+    </script>
+</head>
+<body>
+    <!--<div>
+        <span>div-span1</span>
+        <span>div-span2</span>
+    </div>-->
+    <button id="001">按钮1</button>
+    <button>按钮2</button>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iframe</title>
+</head>
+<body>
+    <!--jframe标签可以在页面上开辟小区域显示一个单独的页面
+            jframe和a标签组合的步骤：
+                1.在jframe标签中使用name属性定义一个名称
+                2.a标签中的target属性上设置jframe的name的属性值
+
+    -->
+    我是一个单独的完整的界面<br><br>
+    <iframe src="表格跨行跨列.html" width="500" height="500" name="abc"></iframe>
+
+    <ul>
+        <li><a href="hello.html" target="abc">hello.html</a></li>
+    </ul>
+</body>
+</html>

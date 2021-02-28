@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        /*
+        * 当用户点击了验证按钮，要获取输入框中的内容，然后验证其是否合法
+        * 验证的规则是：必须由数字，字母，下划线组成，并且长度是5-12位.
+        * */
+        function onclickFun() {
+            var usernameObj = document.getElementById("username")
+            // alert(usernameObj.id);
+            var usernameText = usernameObj.value;
+
+            //如何验证字符串符合某个规则，需要使用正则表达式
+            var patt = /^\w{5,12}$/;
+
+            
+            var usernameSpanObj = document.getElementById("usernameSpan");
+            /*
+            innerHTML 这个属性可读可写
+            usernameSpanObj.innerHTML
+            */
+            /*
+            * test()方法用于测试某个字符串，是不是匹配我的规则
+            * 匹配就返回true 否则就返回false
+            * */
+            if (patt.test(usernameText)){
+                // alert("用户名合法！")
+                // usernameSpanObj.innerHTML = "用户名合法"
+                usernameSpanObj.innerHTML ="<img src=\"对号.jpg\" width=\"17\" height=\"17\">"
+            }else{
+                // alert("用户名不合法！")
+                // usernameSpanObj.innerHTML = "用户名不合法"
+                usernameSpanObj.innerHTML ="<img src=\"错号.jpg\" width=\"17\" height=\"17\">"
+            }
+        }
+    </script>
+</head>
+<body>
+        用户名：<input type="text" id="username" value="abc">
+        <span id="usernameSpan" style="color: red">
+
+        </span>
+        <button onclick="onclickFun()">验证</button>
+<!--        密 码：<input type="password">-->
+</body>
+</html>

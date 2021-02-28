@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="jquery/jquery-3.5.1.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            //不传参数是获取，传递参数是设置
+           /* alert($("div").html());
+            $('div').html("<h1>我是div中的标题</h1>")//设置*/
+
+            //不传参数是获取，传递参数是设置
+          /*  alert($("div").text());
+            $("div").text("我是div中的标题");*/
+
+
+           /* $("button").click(function () {
+                alert($("#username").val());//获取
+                $("#username").val("ABC");//设置
+            })*/
+
+            //批量操作单选
+           /* $(":radio").val(["radio1"]);
+            //批量操作多选框的选中状态
+            $(":checkbox").val(["checkbox1","checkbox3"]);
+            //操作多选下拉框的选中状态
+            $("#multiple").val(["mul2","mul4"]);
+            // 操作相爱来单选框的选中状态
+            $("#single").val(["sin2"]);*/
+
+           $(":radio,:checkbox,#multiple,#single").val(["radio1","checkbox1","checkbox3","mul2","mul4","sin2"])
+        });
+    </script>
+</head>
+<body>
+    <!--<div>我是div标签 <span>我是div中的span</span></div>
+    <input type="text" name="username" id="username">
+    <button>输入</button>-->
+    单选：
+    <input  name="radio" type="radio" value="radio1" >radio1
+    <input  name="radio" type="radio" value="radio2" >radio2<br>
+    多选：
+    <input name="checkbox" type="checkbox" value="checkbox1">checkbox1
+    <input name="checkbox" type="checkbox" value="checkbox2">checkbox2
+    <input name="checkbox" type="checkbox" value="checkbox3">checkbox3<br>
+    下拉多选：
+    <select id="multiple" multiple="multiple" size="4">
+        <option value="mul1">mul1</option>
+        <option value="mul2">mul2</option>
+        <option value="mul3">mul3</option>
+        <option value="mul4">mul4</option>
+    </select><br>
+    下拉单选：
+    <select id="single">
+        <option id="sin1">sin1</option>
+        <option id="sin2">sin2</option>
+        <option id="sin3">sin3</option>
+    </select>
+</body>
+</html>
